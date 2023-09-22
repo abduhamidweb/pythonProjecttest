@@ -55,8 +55,8 @@
 
 
 def nima_gapni_chiqar(a):
-    print(a)
-nima_gapni_chiqar("nima gap")
+    return  a
+print(nima_gapni_chiqar("nima gap"))
 
 
 
