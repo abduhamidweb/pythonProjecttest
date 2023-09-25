@@ -54,16 +54,67 @@
 
 
 
-def nima_gapni_chiqar(a):
-    return  a
-print(nima_gapni_chiqar("nima gap"))
+
+
+# SMS yuborish natijasi
+
+
+# from twilio.rest import Client
+# account_sid = 'AC54c3279399e88ec4243861f8f66457ee'
+# auth_token = '9f891449f40990ecbdf72c2c3375b5c4'
+# client = Client(account_sid, auth_token)
+#
+# message = client.messages.create(
+#   from_='+12517328046',
+#   body='cdcc',
+#   to='+998937322405'
+# )
+#
+# print(message.sid)
+
+
+# week =[1,2,3,4,6,5];
+# print(len(week))
+# newList = list(("nok", "behi"))
+# print(newList)
+# week[0]=0;
+# week[1:3]=["bom"];
+# week.append("oke");
+# week.insert(2,"Juma")
+# week.extend(["bobo"])
+# week.remove(2)
+# week.pop(2)
+# del week
+# week.clear()
+# week.sort()
+# week.reverse()
+# week.count(2)
+# week.index(2)
+# print(week.index(2))
 
 
 
 
 
+from twilio.rest import Client
 
+# Twilio to'g'ridan-to'g'ri kodlarini qo'yib olishingiz kerak
+account_sid = 'AC54c3279399e88ec4243861f8f66457ee'
+auth_token = '9f891449f40990ecbdf72c2c3375b5c4'
+# #
+# # Twilio xizmatiga ulanish
+client = Client(account_sid, auth_token)
 
+# Xabar ma'lumotlari
+to_phone_number = '+998881745858'  # Qabul qiluvchining raqami
+from_phone_number = '+12517328046'   # Sizning Twilio raqamingiz
+message_body = 'Salom, bu Twilio orqali yuborilgan xabar.'
 
-
-
+# 20 ta SMS yuborish
+for _ in range(2):
+    message = client.messages.create(
+        body=message_body,
+        from_=from_phone_number,
+        to=to_phone_number
+    )
+    print(f"Yuborilgan SMS ID: {message.sid}")
