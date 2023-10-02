@@ -62,4 +62,3 @@
 #     print(f"{element} setda mavjud.")
 # else:
 #     print(f"{element} setda mavjud emas.")
-# 16
